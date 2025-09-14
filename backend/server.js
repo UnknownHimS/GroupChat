@@ -7,7 +7,8 @@ const app = express();
 const port = 3000;
 
 // Serve the frontend
-app.use(express.static(path.join(__dirname, '../frontend')));
+app.use(express.static(path.join(__dirname, 'frontend')));
+
 
 const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
@@ -82,3 +83,4 @@ wss.on('connection', (socket) => {
 server.listen(port, () => {
   console.log(`🚀 Server listening on http://localhost:${port}`);
 });
+
